@@ -1,0 +1,46 @@
+version: "3"
+services:
+  reverse-proxy:
+    image: nginx
+    container_name: reverse-proxy-nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - backend-apache-1
+      - backend-apache-2
+      - backend-apache-3
+    links:
+      - backend-apache-1:backend1
+      - backend-apache-2:backend2
+      - backend-apache-3:backend3
+  backend-apache-1:
+    image: benit/debian-web
+    environment:
+      - color=red
+    volumes:
+      - ./html/:/var/www/html/
+    ports:
+      - 8000:80
+    container_name: backend-apache-1
+  backend-apache-2:
+    image: benit/debian-web
+    environment:
+      - color=green
+    volumes:
+      - ./html/:/var/www/html/
+    ports:
+      - 9000:80
+    container_name: backend-apache-2
+
+  backend-apache-3:
+    image: benit/debian-web
+    environment:
+      - color=blue
+    volumes:
+      - ./html/:/var/www/html/
+    ports:
+      - 10000:80
+    container_name: backend-apache-3
