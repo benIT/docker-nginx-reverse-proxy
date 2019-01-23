@@ -12,5 +12,11 @@
 </head>
 <body>
 <h1><?php echo getenv('color'); ?></h1>
+
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 1000);
+</script>
 </body>
 </html>
