@@ -34,7 +34,6 @@ services:
     ports:
       - 9000:80
     container_name: backend-apache-2
-
   backend-apache-3:
     image: benit/debian-web
     environment:
