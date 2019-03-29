@@ -22,6 +22,7 @@ services:
       - color=red
     volumes:
       - ./html/:/var/www/html/
+      - ./data:/data
     ports:
       - 8000:80
     container_name: backend-apache-1
@@ -31,6 +32,7 @@ services:
       - color=green
     volumes:
       - ./html/:/var/www/html/
+      - ./data:/data
     ports:
       - 9000:80
     container_name: backend-apache-2
@@ -40,6 +42,7 @@ services:
       - color=blue
     volumes:
       - ./html/:/var/www/html/
+      - ./data:/data
     ports:
       - 10000:80
     container_name: backend-apache-3

@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo getenv('color'); ?></title>
+    <title>
+        <?php $color = getenv('color');
+        echo $color ?>
+    </title>
     <style>
         body {
             background-color: black;
         }
+
         .circle {
             width: 250px;
             height: 250px;
@@ -20,9 +24,11 @@
     </style>
 </head>
 <body>
+<?php
+file_put_contents('/data/log', $color . "\n", FILE_APPEND);
+?>
 <div class="circle">
     <span> <?php echo sprintf('dispatched on %s', $_SERVER['SERVER_ADDR']); ?></span>
-
 </div>
 <script>
     setTimeout(function () {
