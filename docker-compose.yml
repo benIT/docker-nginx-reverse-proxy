@@ -8,6 +8,7 @@ services:
       - 443:443
     volumes:
       - ./conf.d/:/etc/nginx/conf.d/
+      - ./ssl:/etc/ssl
     depends_on:
       - backend-apache-1
       - backend-apache-2
