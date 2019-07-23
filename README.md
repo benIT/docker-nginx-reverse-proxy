@@ -8,6 +8,8 @@ The background color of the page is managed using an environment variable named 
 
 You can monitor easily on each backend your http request has been dispatched. 
 
+<video width="320" height="240" controls src="demo.mp4"></video>
+
 # Usage 
 
 ## start
