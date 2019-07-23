@@ -1,24 +1,29 @@
 # Purpose
 
-This project sets up one `nginx` reverse proxy frontend  with 3 `apache2` backends.
+This `docker` project sets up a basic architecture based on:
+
+* one `nginx` reverse proxy frontend
+* three `apache2` backends
 
 Each backend is running on a different port and is displaying a basic html page with different background color.
 
 The background color of the page is managed using an environment variable named `color` that is passed to the `apache2` backends. 
 
-With the color, you can monitor easily on each backend your http request has been dispatched.
+Thanks to the color variable, you can easily monitor on which backend the http request has been dispatched.
 
 # Demonstration
 
-<center><video width="320" height="240" controls src="demo.mp4"></video></center>
+You can use this project to create a Christmas garland:
+
+<center><video width="640" height="480" controls src="demo.mp4"></video></center>
 
 # Usage 
 
-## start
+## Start
 
-    docker-compose -d
+    docker-compose up -d
     
-## test
+## Test
 
     curl localhost
     
@@ -29,7 +34,7 @@ returns:
     <head>
         <style>
             body {
-                background-color: red;
+                background-color: red; <!-- color value from env var -->
                 color:white;
             }
         </style>
@@ -40,3 +45,7 @@ returns:
     <h1>red</h1>
     </body>
     </html>
+    
+## Stop
+
+    docker-compose down
