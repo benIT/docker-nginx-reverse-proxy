@@ -1,14 +1,16 @@
 # Purpose
 
-Set up an nginx reverse proxy frontend  whith 3 apache2 backends.
+This project sets up one `nginx` reverse proxy frontend  with 3 `apache2` backends.
 
 Each backend is running on a different port and is displaying a basic html page with different background color.
 
-The background color of the page is managed using an environment variable named `color` that is passed to the apache2 backends. 
+The background color of the page is managed using an environment variable named `color` that is passed to the `apache2` backends. 
 
-You can monitor easily on each backend your http request has been dispatched. 
+With the color, you can monitor easily on each backend your http request has been dispatched.
 
-<video width="320" height="240" controls src="demo.mp4"></video>
+# Demonstration
+
+<center><video width="320" height="240" controls src="demo.mp4"></video></center>
 
 # Usage 
 
